@@ -1,0 +1,110 @@
+.sync-status {
+  position: fixed;
+  z-index: 20;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  max-width: min(720px, calc(100vw - 32px));
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: var(--shadow);
+  font-size: .84rem;
+}
+
+.sync-status[data-state="error"],
+.sync-status[data-state="offline"],
+.sync-status[data-state="conflict"] {
+  background: #8f2638;
+  color: #fff;
+}
+
+.sync-status button,
+.login-card button {
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  padding: 6px 9px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sync-status button:focus-visible,
+.login-card button:focus-visible,
+.login-card input:focus-visible {
+  outline: 3px solid #ffc857;
+  outline-offset: 2px;
+}
+
+.login-gate {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgb(24 34 52 / 72%);
+}
+
+.login-gate[hidden] {
+  display: none;
+}
+
+.login-card {
+  width: min(100%, 420px);
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.login-card h1 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.login-card p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.login-card label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.login-card input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.login-card button {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+#loginMessage {
+  min-height: 1.5em;
+  margin-top: 10px;
+  color: var(--danger);
+}
+
+@media (max-width: 480px) {
+  .sync-status {
+    left: 8px;
+    bottom: 8px;
+    max-width: calc(100vw - 16px);
+  }
+}
